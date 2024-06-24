@@ -1,0 +1,9 @@
+<div class="grid">
+  @for (row of cells; let i = $index; track row) {
+    <div class="row">
+      @for (cell of row; let j = $index; track cell) {
+        <div class="cell" [ngClass]="cell" (click)="onCellClick(i, j)"></div>
+      }
+    </div>
+  }
+</div>

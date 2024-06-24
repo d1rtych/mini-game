@@ -1,0 +1,39 @@
+:root {
+  --cell-size: 50px;
+}
+
+$cellSize: var(--cell-size);
+
+:host {
+  .grid {
+    display: grid;
+    gap: 2px;
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 2px;
+
+      .cell {
+        width: $cellSize;
+        height: $cellSize;
+        border: 1px solid #ccc;
+        background-color: #6c6ce3;
+        transition: background-color 0.5s;
+        position: relative;
+
+        &.yellow {
+          background-color: yellow;
+        }
+
+        &.green {
+          background-color: green;
+        }
+
+        &.red {
+          background-color: red;
+        }
+      }
+    }
+  }
+}

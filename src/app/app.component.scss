@@ -1,0 +1,38 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #d9d9d9;
+  padding: 20px;
+}
+
+.header {
+  border-bottom: 3px solid white;
+}
+
+.footer {
+  border-top: 3px solid white;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 24px;
+}
+.footer-text {
+  margin: 0;
+}
+
+app-game {
+  max-width: 1024px;
+  margin: 0 auto 25px;
+  flex-grow: 1;
+}
