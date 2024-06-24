@@ -1,0 +1,42 @@
+<div class="game-container">
+  <form [formGroup]="gameSettings">
+    <div class="controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Time in ms</mat-label>
+        <input
+          matInput
+          type="number"
+          max="10000"
+          step="50"
+          formControlName="time"
+          [disabled]="gameStarted"
+        >
+        @if (timeControl.invalid) {
+          <mat-error>This field is required</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Cell size in px</mat-label>
+        <input
+          matInput
+          type="number"
+          min="10"
+          max="100"
+          step="10"
+          formControlName="cellSize"
+          [disabled]="gameStarted"
+        >
+        @if (cellSizeControl.invalid) {
+          <mat-error>This field is required</mat-error>
+        }
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="startGame()" [disabled]="gameStarted">START GAME</button>
+    </div>
+  </form>
+  <div class="score">
+    <p>Player: {{ userScore$ | async }}</p>
+    <p>Computer: {{ computerScore$ | async }}</p>
+  </div>
+  <app-grid></app-grid>
+</div>
